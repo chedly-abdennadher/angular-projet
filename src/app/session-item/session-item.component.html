@@ -1,0 +1,29 @@
+
+<h2> {{session.name}} </h2>
+<h2 textContent="{{name}}"> </h2>
+<div align="{{alignement}}"> {{session.track}} </div>
+<div align="{{alignement}}">{{session.local}}   </div>
+<div class="tools" align="{{alignement}}">
+<div *ngIf="session.participants <5; then ok else notok"> </div>
+
+<ng-template #ok> 
+encore {{5-session.participants}}
+   </ng-template> 
+   <ng-template #notok>
+     <b>  session complete </b>
+       </ng-template> 
+    
+
+
+
+    <a class="delete">
+Details
+</a>
+<a [class.link-is-disabled]="session.isCompleted" class="inscrire" (click)="inscrire()">
+Inscription
+</a>
+<a class="partager">
+Partager
+</a>
+
+</div>
